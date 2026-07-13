@@ -1,28 +1,16 @@
 {
-"name":"Portfolio",
-
-"short_name":"Portfolio",
-
-"start_url":"index.html",
-
-"display":"standalone",
-
-"background_color":"#050816",
-
-"theme_color":"#2563EB",
-
-"icons":[
-
-{
-
-"src":"assets/icon.png",
-
-"sizes":"512x512",
-
-"type":"image/png"
-
-}
-
-]
-
+  "name": "Naufal Fadhila Falih - Portfolio",
+  "short_name": "Naufal Portfolio",
+  "description": "Portfolio of Naufal Fadhila Falih - Embedded System Engineer, Robotics, IoT Developer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050510",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
 }

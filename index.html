@@ -1,925 +1,517 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naufal | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naufal Fadhila Falih | Embedded System Engineer Portfolio</title>
+  <meta name="description" content="Portfolio of Naufal Fadhila Falih - Embedded System Engineer, Robotics, ESP32, IoT Developer based in Malang, Indonesia.">
+  <meta name="keywords" content="ESP32, Embedded System, Robotics, IoT, Portfolio, Naufal Fadhila Falih">
+  <meta name="author" content="Naufal Fadhila Falih">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#050510">
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Naufal Fadhila Falih | Portfolio">
+  <meta property="og:description" content="Embedded System | Robot Developer | IoT Developer">
+  <meta property="og:image" content="assets/preview.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Naufal Fadhila Falih | Portfolio">
+  <meta name="twitter:description" content="Embedded System | Robot Developer | IoT Developer">
+  <meta name="twitter:image" content="assets/preview.svg">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
 
-    <!-- JS Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
 
-    <!-- PWA & SEO -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="description" content="Portfolio Naufal Fadhila Falih - Embedded System, Robotika, ESP32, IoT Developer">
-    <meta name="keywords" content="ESP32, Robot, Embedded, IoT, Portfolio">
-    <meta name="author" content="Naufal Fadhila Falih">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Portfolio Naufal Fadhila Falih">
-    <meta property="og:description" content="Embedded System | Robot Developer">
-    <meta property="og:image" content="assets/preview.svg">
-    <meta property="og:type" content="website">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-    <link rel="icon" href="assets/favicon.svg">
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-  <!-- =======================================
-        THEME SWITCHER
-======================================= -->
 
-<div class="theme-panel">
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" aria-hidden="true"></div>
 
-    <div class="theme-color blue" data-color="#2563EB"></div>
+  <!-- Loader -->
+  <div id="loader" style="position:fixed;inset:0;background:#050510;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;z-index:99999;transition:opacity 0.4s ease;">
+    <div style="width:40px;height:40px;border:3px solid rgba(255,255,255,0.1);border-top-color:#2563eb;border-radius:50%;animation:spin 0.8s linear infinite;"></div>
+    <span style="font-family:'Poppins',sans-serif;color:#f8fafc;font-weight:600;font-size:16px;">Naufal.</span>
+    <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+  </div>
 
-    <div class="theme-color purple" data-color="#7C3AED"></div>
-
-    <div class="theme-color green" data-color="#10B981"></div>
-
-    <div class="theme-color red" data-color="#EF4444"></div>
-
-</div>  
-    <canvas id="particles"></canvas>
-<!-- ===========================
-        CURSOR GLOW
-=========================== -->
-
-<div id="cursorGlow"></div>
-
-<!-- ===========================
-        SCROLL PROGRESS
-=========================== -->
-
-<div id="progressBar"></div>
-
-<!-- ===== LOADER ===== -->
-<div id="loader">
-    <div class="loader-circle"></div>
-    <h2>Naufal.</h2>
-</div>
-
-<!-- ===== NAVBAR ===== -->
-<header class="navbar">
-
-    <div class="logo">
-        Naufal<span>.</span>
-    </div>
-<div class="theme-toggle">
-
-    <i class="fa-solid fa-moon"></i>
-
-</div>
-    <nav>
-
-        <a href="#home">Home</a>
-
+  <!-- Navbar -->
+  <header class="navbar" role="banner">
+    <div class="container">
+      <a href="#hero" class="nav-logo">Naufal<span>.</span></a>
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="#hero">Home</a>
         <a href="#about">About</a>
-
         <a href="#skills">Skills</a>
-
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-
         <a href="#contact">Contact</a>
-
-    </nav>
-
-    <div class="menu-btn">
-
-        <i class="fa-solid fa-bars"></i>
-
+      </nav>
+      <button class="nav-mobile-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-
-</header>
-
-<!-- ===== HERO ===== -->
-
-<section id="home" class="hero">
-
-<div class="hero-text">
-
-<h4>Hello 👋</h4>
-
-<h1>
-
-I'm
-
-<span>Naufal Fadhila Falih</span>
-
-</h1>
-
-<h3>
-
-Embedded System Engineer
-
-</h3>
-
-<p>
-
-Mahasiswa D-IV Sistem Kelistrikan
-
-Politeknik Negeri Malang
-
-yang fokus pada
-
-Robotika,
-
-Embedded System,
-
-dan Internet of Things.
-
-</p>
-
-<div class="hero-button">
-
-<a
-
-href="assets/cv.pdf"
-
-download
-
-class="btn-primary">
-
-Download CV
-
-</a>
-<a href="#projects"
-
-class="btn-secondary">
-
-My Project
-
-</a>
-
-</div>
-
-<div class="social">
-
-<a href="#"><i class="fab fa-github"></i></a>
-
-<a href="#"><i class="fab fa-linkedin"></i></a>
-
-<a href="#"><i class="fab fa-instagram"></i></a>
-
-<a href="#"><i class="fab fa-youtube"></i></a>
-
-</div>
-
-</div>
-
-<div class="hero-image">
-
-<img src="assets/profile.svg"
-
-alt="profile">
-
-</div>
-
-</section>
-
-<!-- ===== ABOUT ===== -->
-
-<section id="about">
-
-<div class="title">
-
-<h2>About Me</h2>
-
-<p>
-
-Know Me More
-
-</p>
-
-</div>
-
-<div class="about-container">
-
-<div class="about-image">
-
-<img src="assets/profile.svg">
-
-</div>
-
-<div class="about-text">
-
-<h3>
-
-Who am I ?
-
-</h3>
-
-<p>
-
-Saya adalah mahasiswa
-
-D-IV Sistem Kelistrikan
-
-Politeknik Negeri Malang
-
-yang memiliki minat besar
-
-di bidang
-
-Embedded System,
-
-Robotika,
-
-Elektronika,
-
-dan IoT.
-
-</p>
-<section class="stats">
-
-<div class="stat-card">
-
-<h2 class="counter" data-target="15">0</h2>
-
-<p>Projects</p>
-
-</div>
-
-<div class="stat-card">
-
-<h2 class="counter" data-target="10">0</h2>
-
-<p>Certificates</p>
-
-</div>
-
-<div class="stat-card">
-
-<h2 class="counter" data-target="3">0</h2>
-
-<p>Years Learning</p>
-
-</div>
-
-<div class="stat-card">
-
-<h2 class="counter" data-target="200">0</h2>
-
-<p>Github Commits</p>
-
-</div>
-
-</section>
-
-<div class="info">
-
-<div>
-
-<h5>Nama</h5>
-
-<span>
-
-Naufal Fadhila Falih
-
-</span>
-
-</div>
-
-<div>
-
-<h5>Email</h5>
-
-<span>
-
-your@email.com
-
-</span>
-
-</div>
-
-<div>
-
-<h5>Lokasi</h5>
-
-<span>
-
-Malang, Indonesia
-
-</span>
-
-</div>
-
-<div>
-
-<h5>Status</h5>
-
-<span>
-
-Student
-
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<!-- =======================================
-                SKILLS
-======================================= -->
-
-<section id="skills" class="skills">
-
-    <div class="title">
-
-        <h2>My Skills</h2>
-
-        <p>Technology I Use</p>
-
-    </div>
-
-    <div class="skills-container">
-
-        <div class="skill-card">
-
-            <h3>ESP32</h3>
-
-            <div class="progress">
-
-                <div class="progress-bar" style="width:95%">
-
-                    95%
-
-                </div>
-
-            </div>
-
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main>
+
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-content fade-up">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            Available for opportunities
+          </div>
+          <h1 class="hero-name">
+            I'm <span class="gradient">Naufal Fadhila Falih</span>
+          </h1>
+          <p class="hero-typing">
+            <span class="typing-text">Embedded System Engineer</span>
+          </p>
+          <p class="hero-description">
+            D-IV Electrical Systems student at Politeknik Negeri Malang, focused on Robotics, Embedded Systems, and the Internet of Things.
+          </p>
+          <div class="hero-actions">
+            <a href="assets/cv.pdf" download class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download CV
+            </a>
+            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+          </div>
+          <div class="hero-social">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
         </div>
-
-        <div class="skill-card">
-
-            <h3>Arduino</h3>
-
-            <div class="progress">
-
-                <div class="progress-bar" style="width:90%">
-
-                    90%
-
-                </div>
-
-            </div>
-
+        <div class="hero-image fade-up">
+          <div class="hero-image-wrapper">
+            <div class="hero-image-ring"></div>
+            <img src="assets/profile.svg" alt="Naufal Fadhila Falih - Embedded System Engineer" width="320" height="320" loading="eager">
+            <div class="hero-image-glow"></div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="skill-card">
-
-            <h3>C / C++</h3>
-
-            <div class="progress">
-
-                <div class="progress-bar" style="width:92%">
-
-                    92%
-
-                </div>
-
-            </div>
-
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-label">About</span>
+          <h2 class="section-title">Know Me Better</h2>
         </div>
-
-        <div class="skill-card">
-
-            <h3>PlatformIO</h3>
-
-            <div class="progress">
-
-                <div class="progress-bar" style="width:88%">
-
-                    88%
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="skill-card">
-
-            <h3>KiCad</h3>
-
-            <div class="progress">
-
-                <div class="progress-bar" style="width:80%">
-
-                    80%
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="skill-card">
-
-            <h3>Figma</h3>
-
-            <div class="progress">
-
-                <div class="progress-bar" style="width:75%">
-
-                    75%
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =======================================
-             EXPERIENCE
-======================================= -->
-
-<section class="experience">
-
-    <div class="title">
-
-        <h2>Education</h2>
-
-        <p>My Journey</p>
-
-    </div>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-
-            <span class="year">2023</span>
-
-            <h3>Politeknik Negeri Malang</h3>
-
+        <div class="about-grid">
+          <div class="about-intro fade-up">
+            <h3>Who I Am</h3>
             <p>
-
-                D-IV Sistem Kelistrikan
-
+              I am a D-IV Electrical Systems student at Politeknik Negeri Malang with a strong passion for Embedded Systems, Robotics, Electronics, and IoT. I enjoy building real-world solutions using microcontrollers and creative engineering approaches.
             </p>
-
-        </div>
-
-        <div class="timeline-item">
-
-            <span class="year">2024</span>
-
-            <h3>Embedded System</h3>
-
-            <p>
-
-                ESP32, Arduino, IoT
-
-            </p>
-
-        </div>
-
-        <div class="timeline-item">
-
-            <span class="year">2025</span>
-
-            <h3>Robotics</h3>
-
-            <p>
-
-                Robot Line Follower
-
-                Robot Transporter
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =======================================
-              PROJECTS
-======================================= -->
-
-<section id="projects" class="projects">
-
-    <div class="title">
-
-        <h2>My Projects</h2>
-
-        <p>Latest Project</p>
-
-    </div>
-    <div class="project-filter">
-
-    <button class="filter-btn active" data-filter="all">
-
-        Semua
-
-    </button>
-
-    <button class="filter-btn" data-filter="robot">
-
-        Robotika
-
-    </button>
-
-    <button class="filter-btn" data-filter="iot">
-
-        IoT
-
-    </button>
-
-    <button class="filter-btn" data-filter="embedded">
-
-        Embedded
-
-    </button>
-
-</div>
-
-    <div class="project-container">
-        <!-- Card 1: Line Follower -->
-        <div class="project-card robot embedded">
-            <img loading="lazy" src="assets/linefollower.svg" alt="Robot Line Follower">
-            <div class="project-content">
-                <h3>Robot Line Follower</h3>
-                <p>ESP32 | 16 Sensor | PID Control</p>
-                <a href="#" class="detail-btn" 
-                   data-title="Robot Line Follower" 
-                   data-image="assets/linefollower.svg" 
-                   data-description="Robot line follower menggunakan 16 sensor photodioda dan algoritma PID untuk kecepatan tinggi.">
-                    Detail
-                </a>
+            <div class="stats-grid stagger">
+              <div class="stat-card">
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-label">Projects</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number" data-target="10">0</div>
+                <div class="stat-label">Certificates</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number" data-target="3">0</div>
+                <div class="stat-label">Years Learning</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number" data-target="200">0</div>
+                <div class="stat-label">GitHub Commits</div>
+              </div>
             </div>
-        </div>
-
-        <!-- Card 2: Robot Transporter -->
-        <div class="project-card robot">
-            <img loading="lazy" src="assets/transporter.svg" alt="Robot Transporter">
-            <div class="project-content">
-                <h3>Robot Transporter</h3>
-                <p>ESP32 | PS3 Controller | BTS7960</p>
-                <a href="#" class="detail-btn" 
-                   data-title="Robot Transporter" 
-                   data-image="assets/transporter.svg" 
-                   data-description="Robot transporter menggunakan ESP32, driver BTS7960 dan kontrol PS3.">
-                    Detail
-                </a>
+          </div>
+          <div class="about-info fade-up">
+            <div class="info-item">
+              <div class="info-label">Name</div>
+              <div class="info-value">Naufal Fadhila Falih</div>
             </div>
-        </div>
-
-        <!-- Card 3: Digital Clock -->
-        <div class="project-card embedded">
-            <img loading="lazy" src="assets/digitalclock.svg" alt="Digital Clock">
-            <div class="project-content">
-                <h3>Digital Clock</h3>
-                <p>CD4026 | Seven Segment</p>
-                <a href="#" class="detail-btn" 
-                   data-title="Digital Clock" 
-                   data-image="assets/digitalclock.svg" 
-                   data-description="Jam digital menggunakan IC CD4026 dan seven segment.">
-                    Detail
-                </a>
+            <div class="info-item">
+              <div class="info-label">Email</div>
+              <div class="info-value">your@email.com</div>
             </div>
-        </div>
-    </div>
-
-</section>
-<!-- =======================================
-            CERTIFICATES
-======================================= -->
-
-<section id="certificate" class="certificate">
-
-    <div class="title">
-
-        <h2>Certificates</h2>
-
-        <p>Achievements & Courses</p>
-
-    </div>
-
-    <div class="certificate-container">
-
-        <div class="certificate-card">
-
-            <img src="assets/certificate1.svg" alt="Certificate">
-
-            <h3>Embedded System</h3>
-
-            <span>2025</span>
-
-        </div>
-
-        <div class="certificate-card">
-
-            <img src="assets/certificate2.svg" alt="Certificate">
-
-            <h3>Internet of Things</h3>
-
-            <span>2025</span>
-
-        </div>
-
-        <div class="certificate-card">
-
-            <img src="assets/certificate3.svg" alt="Certificate">
-
-            <h3>Robot Programming</h3>
-
-            <span>2026</span>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =======================================
-                GALLERY
-======================================= -->
-
-<section class="gallery">
-
-    <div class="title">
-
-        <h2>Gallery</h2>
-
-        <p>Project Documentation</p>
-
-    </div>
-<div class="gallery-grid">
-
-    <img class="gallery-item" src="assets/gallery1.svg">
-
-    <img class="gallery-item" src="assets/gallery2.svg">
-
-    <img class="gallery-item" src="assets/gallery3.svg">
-
-    <img class="gallery-item" src="assets/gallery4.svg">
-
-    <img class="gallery-item" src="assets/gallery5.svg">
-
-    <img class="gallery-item" src="assets/gallery6.svg">
-
-</div>
-
-</section>
-
-
-<!-- =======================================
-                CONTACT
-======================================= -->
-
-<section id="contact" class="contact">
-
-    <div class="title">
-
-        <h2>Contact Me</h2>
-
-        <p>Let's Build Something Together</p>
-
-    </div>
-
-    <div class="contact-container">
-
-        <div class="contact-info">
-
-            <div class="info-box">
-
-                <i class="fa-solid fa-envelope"></i>
-
-                <div>
-
-                    <h3>Email</h3>
-
-                    <p>your@email.com</p>
-
-                </div>
-
+            <div class="info-item">
+              <div class="info-label">Location</div>
+              <div class="info-value">Malang, Indonesia</div>
             </div>
-
-            <div class="info-box">
-
-                <i class="fa-solid fa-phone"></i>
-
-                <div>
-
-                    <h3>WhatsApp</h3>
-
-                    <p>+62 812 xxxx xxxx</p>
-
-                </div>
-
+            <div class="info-item">
+              <div class="info-label">Status</div>
+              <div class="info-value">Student</div>
             </div>
-
-            <div class="info-box">
-
-                <i class="fa-brands fa-github"></i>
-
-                <div>
-
-                    <h3>Github</h3>
-
-                    <p>github.com/username</p>
-
-                </div>
-
-            </div>
-
+          </div>
         </div>
+      </div>
+    </section>
 
-        <form class="contact-form">
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-label">Skills</span>
+          <h2 class="section-title">Technologies I Use</h2>
+        </div>
+        <div class="skills-grid stagger">
+          <div class="card skill-card">
+            <div class="skill-card-header">
+              <span class="skill-name">ESP32</span>
+              <span class="skill-percent">95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="95%"></div>
+            </div>
+          </div>
+          <div class="card skill-card">
+            <div class="skill-card-header">
+              <span class="skill-name">Arduino</span>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="90%"></div>
+            </div>
+          </div>
+          <div class="card skill-card">
+            <div class="skill-card-header">
+              <span class="skill-name">C / C++</span>
+              <span class="skill-percent">92%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="92%"></div>
+            </div>
+          </div>
+          <div class="card skill-card">
+            <div class="skill-card-header">
+              <span class="skill-name">PlatformIO</span>
+              <span class="skill-percent">88%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="88%"></div>
+            </div>
+          </div>
+          <div class="card skill-card">
+            <div class="skill-card-header">
+              <span class="skill-name">KiCad</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="80%"></div>
+            </div>
+          </div>
+          <div class="card skill-card">
+            <div class="skill-card-header">
+              <span class="skill-name">Figma</span>
+              <span class="skill-percent">75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="75%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <input type="text" placeholder="Nama Lengkap">
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-label">Experience</span>
+          <h2 class="section-title">My Journey</h2>
+        </div>
+        <div class="timeline fade-up">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-year">2023</span>
+            <h3 class="timeline-title">Politeknik Negeri Malang</h3>
+            <p class="timeline-desc">D-IV Electrical Systems - Started academic journey in electrical engineering with focus on embedded systems and automation.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-year">2024</span>
+            <h3 class="timeline-title">Embedded Systems</h3>
+            <p class="timeline-desc">Deep dive into ESP32, Arduino platforms, and IoT development. Built multiple projects connecting hardware with cloud services.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-year">2025</span>
+            <h3 class="timeline-title">Robotics</h3>
+            <p class="timeline-desc">Developed Line Follower and Transporter robots. Applied PID control, sensor fusion, and real-time programming techniques.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <input type="email" placeholder="Email">
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-label">Projects</span>
+          <h2 class="section-title">Featured Work</h2>
+        </div>
+        <div class="project-filters fade-up">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="robot">Robotics</button>
+          <button class="filter-btn" data-filter="iot">IoT</button>
+          <button class="filter-btn" data-filter="embedded">Embedded</button>
+        </div>
+        <div class="projects-grid stagger">
+          <div class="card project-card robot embedded">
+            <div class="project-card-image">
+              <img src="assets/linefollower.svg" alt="Robot Line Follower project" loading="lazy" width="400" height="200">
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">Robot Line Follower</h3>
+              <p class="project-card-tech">ESP32 | 16 Sensor | PID Control</p>
+              <a href="#" class="project-detail-btn project-card-link"
+                 data-title="Robot Line Follower"
+                 data-image="assets/linefollower.svg"
+                 data-description="High-speed line follower robot using 16 photodiode sensors and PID algorithm for precise path tracking on competition-grade tracks."
+                 data-tags="ESP32, C++, PID, Sensor Fusion">
+                View Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card project-card robot">
+            <div class="project-card-image">
+              <img src="assets/transporter.svg" alt="Robot Transporter project" loading="lazy" width="400" height="200">
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">Robot Transporter</h3>
+              <p class="project-card-tech">ESP32 | PS3 Controller | BTS7960</p>
+              <a href="#" class="project-detail-btn project-card-link"
+                 data-title="Robot Transporter"
+                 data-image="assets/transporter.svg"
+                 data-description="Remote-controlled transporter robot using ESP32, BTS7960 motor driver, and PS3 wireless controller for object transportation tasks."
+                 data-tags="ESP32, C++, Motor Driver, Wireless">
+                View Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card project-card embedded">
+            <div class="project-card-image">
+              <img src="assets/digitalclock.svg" alt="Digital Clock project" loading="lazy" width="400" height="200">
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">Digital Clock</h3>
+              <p class="project-card-tech">CD4026 | Seven Segment</p>
+              <a href="#" class="project-detail-btn project-card-link"
+                 data-title="Digital Clock"
+                 data-image="assets/digitalclock.svg"
+                 data-description="Digital clock built using CD4026 IC and seven segment displays. Demonstrates fundamental digital electronics and timing circuits."
+                 data-tags="CD4026, Seven Segment, Digital Logic">
+                View Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <input type="text" placeholder="Subjek">
+    <!-- Certificates -->
+    <section id="certificates" class="section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-label">Certificates</span>
+          <h2 class="section-title">Achievements & Courses</h2>
+        </div>
+        <div class="certificates-grid stagger">
+          <div class="card certificate-card">
+            <div class="certificate-card-image">
+              <img src="assets/certificate1.svg" alt="Embedded System Certificate" loading="lazy" width="400" height="250">
+            </div>
+            <h3 class="certificate-card-title">Embedded System</h3>
+            <span class="certificate-card-year">2025</span>
+          </div>
+          <div class="card certificate-card">
+            <div class="certificate-card-image">
+              <img src="assets/certificate2.svg" alt="Internet of Things Certificate" loading="lazy" width="400" height="250">
+            </div>
+            <h3 class="certificate-card-title">Internet of Things</h3>
+            <span class="certificate-card-year">2025</span>
+          </div>
+          <div class="card certificate-card">
+            <div class="certificate-card-image">
+              <img src="assets/certificate3.svg" alt="Robot Programming Certificate" loading="lazy" width="400" height="250">
+            </div>
+            <h3 class="certificate-card-title">Robot Programming</h3>
+            <span class="certificate-card-year">2026</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <textarea rows="6" placeholder="Tulis pesan..."></textarea>
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-label">Contact</span>
+          <h2 class="section-title">Let's Work Together</h2>
+          <p class="section-subtitle">Have a project in mind? Get in touch.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info-list fade-up">
+            <div class="card contact-info-card">
+              <div class="contact-info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-info-text">
+                <h4>Email</h4>
+                <p>your@email.com</p>
+              </div>
+            </div>
+            <div class="card contact-info-card">
+              <div class="contact-info-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-info-text">
+                <h4>WhatsApp</h4>
+                <p>+62 812 xxxx xxxx</p>
+              </div>
+            </div>
+            <div class="card contact-info-card">
+              <div class="contact-info-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="contact-info-text">
+                <h4>GitHub</h4>
+                <p>github.com/username</p>
+              </div>
+            </div>
+          </div>
+          <form class="card contact-form fade-up" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name *</label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email *</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="subject">Subject</label>
+              <input class="form-input" type="text" id="subject" name="subject" placeholder="Project inquiry">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message *</label>
+              <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+            <div class="form-status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
 
-            <button type="submit">
+  </main>
 
-                Kirim Pesan
-
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-<!-- =======================================
-                FOOTER
-======================================= -->
-
-<footer>
-
-    <div class="footer-content">
-
-        <h2>Naufal.</h2>
-
-        <p>
-
-            Embedded System • Robotics • IoT
-
-        </p>
-
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">Naufal<span>.</span></div>
+        <p class="footer-tagline">Embedded Systems &bull; Robotics &bull; IoT</p>
         <div class="footer-social">
-
-            <a href="#"><i class="fab fa-github"></i></a>
-
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-
-            <a href="#"><i class="fab fa-instagram"></i></a>
-
-            <a href="#"><i class="fab fa-youtube"></i></a>
-
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
         </div>
-
+        <p class="footer-copyright">&copy; 2026 Naufal Fadhila Falih. All rights reserved.</p>
+      </div>
     </div>
+  </footer>
 
-    <div class="copyright">
-
-        © 2026 Naufal Fadhila Falih
-
-    </div>
-
-</footer>
-
-<!-- =======================================
-         MOBILE BOTTOM NAVIGATION
-======================================= -->
-
-<nav class="bottom-nav">
-
-    <a href="#home">
-
-        <i class="fa-solid fa-house"></i>
-
-        <span>Home</span>
-
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-bottom-nav" role="navigation" aria-label="Mobile bottom navigation">
+    <a href="#hero">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Home</span>
     </a>
-
     <a href="#about">
-
-        <i class="fa-solid fa-user"></i>
-
-        <span>About</span>
-
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>About</span>
     </a>
-
     <a href="#projects">
-
-        <i class="fa-solid fa-robot"></i>
-
-        <span>Project</span>
-
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      <span>Projects</span>
     </a>
-
     <a href="#contact">
-
-        <i class="fa-solid fa-envelope"></i>
-
-        <span>Contact</span>
-
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <span>Contact</span>
     </a>
+  </nav>
 
-</nav>
+  <!-- Scroll to Top -->
+  <button class="scroll-top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
 
-<!-- Scroll To Top -->
-
-<button id="scrollTop">
-
-    <i class="fa-solid fa-arrow-up"></i>
-
-</button>
-
-<!-- JAVASCRIPT -->
-
-<script src="script.js"></script>
-<script src="navbar.js"></script>
-<script src="project.js"></script>
-<script src="typing.js"></script>
-
-<!-- ======================================
-            PROJECT MODAL
-====================================== -->
-
-<div id="projectModal" class="modal">
-
+  <!-- Project Modal -->
+  <div class="modal-overlay" role="dialog" aria-modal="true" aria-label="Project details">
     <div class="modal-content">
-
-        <span class="close-modal">&times;</span>
-
-        <img id="modalImage" src="">
-
-        <h2 id="modalTitle"></h2>
-
-        <p id="modalDesc"></p>
-
-        <div class="tech-list">
-
-            <span>ESP32</span>
-            <span>C++</span>
-            <span>PID</span>
-
-        </div>
-
-        <a href="#" class="btn-primary">
-
-            Source Code
-
-        </a>
-
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <img class="modal-image" src="" alt="">
+      <h2 class="modal-title"></h2>
+      <p class="modal-desc"></p>
+      <div class="modal-tags"></div>
     </div>
+  </div>
 
-</div>
-
-<!-- ===========================
-        IMAGE LIGHTBOX
-=========================== -->
-
-<div class="lightbox">
-
-    <span class="close-lightbox">
-
-        &times;
-
-    </span>
-
-    <img id="lightboxImage">
-
-</div> 
-<div id="scrollIndicator">
-
-    Scroll
-
-</div>
-<div class="badge">
-
-Featured
-
-</div>
-
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
 </body>
 </html>

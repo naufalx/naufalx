@@ -1,55 +1,71 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-<title>404</title>
-
-<style>
-
-body{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-height:100vh;
-
-background:#050816;
-
-color:white;
-
-font-family:Arial;
-
-flex-direction:column;
-
-}
-
-a{
-
-color:#38BDF8;
-
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #050510;
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 24px;
+    }
+    .error-code {
+      font-size: 120px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .error-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .error-desc {
+      font-size: 16px;
+      color: #94a3b8;
+      margin-bottom: 32px;
+    }
+    .error-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: #2563eb;
+      color: white;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .error-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+    }
+  </style>
 </head>
-
 <body>
-
-<h1>404</h1>
-
-<p>Halaman tidak ditemukan.</p>
-
-<a href="index.html">
-
-Kembali
-
-</a>
-
+  <div>
+    <div class="error-code">404</div>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-desc">The page you're looking for doesn't exist or has been moved.</p>
+    <a href="index.html" class="error-link">Back to Home</a>
+  </div>
 </body>
-
 </html>

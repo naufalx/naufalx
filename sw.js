@@ -1,43 +1,47 @@
-const CACHE="portfolio-v1";
-
-const assets=[
-
-"/",
-
-"/index.html",
-
-"/style.css",
-
-"/script.js",
-
-"/navbar.js",
-
-"/project.js",
-
-"/typing.js"
-
+const CACHE_NAME = 'portfolio-v2';
+const ASSETS = [
+  '/',
+  '/index.html',
+  '/css/style.css',
+  '/js/main.js'
 ];
 
-self.addEventListener("install",e=>{
-
-e.waitUntil(
-
-caches.open(CACHE)
-
-.then(cache=>cache.addAll(assets))
-
-);
-
+self.addEventListener('install', function (event) {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(function (cache) {
+      return cache.addAll(ASSETS);
+    })
+  );
+  self.skipWaiting();
 });
 
-self.addEventListener("fetch",e=>{
+self.addEventListener('activate', function (event) {
+  event.waitUntil(
+    caches.keys().then(function (keys) {
+      return Promise.all(
+        keys
+          .filter(function (key) { return key !== CACHE_NAME; })
+          .map(function (key) { return caches.delete(key); })
+      );
+    })
+  );
+  self.clients.claim();
+});
 
-e.respondWith(
-
-caches.match(e.request)
-
-.then(res=>res||fetch(e.request))
-
-);
-
+self.addEventListener('fetch', function (event) {
+  event.respondWith(
+    caches.match(event.request).then(function (cached) {
+      return cached || fetch(event.request).then(function (response) {
+        if (response.status === 200 && response.type === 'basic') {
+          var clone = response.clone();
+          caches.open(CACHE_NAME).then(function (cache) {
+            cache.put(event.request, clone);
+          });
+        }
+        return response;
+      });
+    }).catch(function () {
+      return caches.match('/index.html');
+    })
+  );
 });
