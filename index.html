@@ -11,41 +11,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Icons -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="animation.css">
-    <link rel="stylesheet" href="responsive.css">
+
+    <!-- JS Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <meta charset="UTF-8">
-<link rel="manifest" href="manifest.json">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Portfolio Naufal Fadhila Falih - Embedded System, Robotika, ESP32, IoT Developer">
+    <!-- PWA & SEO -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="description" content="Portfolio Naufal Fadhila Falih - Embedded System, Robotika, ESP32, IoT Developer">
+    <meta name="keywords" content="ESP32, Robot, Embedded, IoT, Portfolio">
+    <meta name="author" content="Naufal Fadhila Falih">
 
-<meta name="keywords" content="ESP32, Robot, Embedded, IoT, Portfolio">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Portfolio Naufal Fadhila Falih">
+    <meta property="og:description" content="Embedded System | Robot Developer">
+    <meta property="og:image" content="assets/preview.svg">
+    <meta property="og:type" content="website">
 
-<meta name="author" content="Naufal Fadhila Falih">
-
-<meta property="og:title" content="Portfolio Naufal Fadhila Falih">
-
-<meta property="og:description" content="Embedded System | Robot Developer">
-
-<meta property="og:image" content="assets/preview.png">
-
-<meta property="og:type" content="website">
-
-<link rel="icon" href="assets/favicon.png">
+    <link rel="icon" href="assets/favicon.svg">
 </head>
 
 <body>
-    <div id="loader">
-
-    <div class="loader-circle"></div>
-
-</div>
   <!-- =======================================
         THEME SWITCHER
 ======================================= -->
@@ -190,7 +179,7 @@ My Project
 
 <div class="hero-image">
 
-<img src="assets/profile.png"
+<img src="assets/profile.svg"
 
 alt="profile">
 
@@ -218,7 +207,7 @@ Know Me More
 
 <div class="about-image">
 
-<img src="assets/profile.png">
+<img src="assets/profile.svg">
 
 </div>
 
@@ -566,158 +555,50 @@ Student
 </div>
 
     <div class="project-container">
-
-        <div class="project-card">
-            <div class="project-card robot embedded">
-
-            </div>
-            <div class="project-card robot">
-
-            </div>
-            <div class="project-card embedded">
-
-            </div>
-            <div class="project-card iot">
-
-            </div>
-
-            <<img
-
-loading="lazy"
-
-src="assets/linefollower.jpg">>
-
+        <!-- Card 1: Line Follower -->
+        <div class="project-card robot embedded">
+            <img loading="lazy" src="assets/linefollower.svg" alt="Robot Line Follower">
             <div class="project-content">
-
-                <h3>
-
-                    Robot Line Follower
-
-                </h3>
-
-                <p>
-
-                    ESP32
-
-                    16 Sensor
-
-                    PID Control
-
-                </p>
-<a href="#"
-
-class="detail-btn"
-
-data-title="Robot Line Follower"
-
-data-image="assets/linefollower.jpg"
-
-data-description="Robot line follower menggunakan 16 sensor photodioda dan algoritma PID untuk kecepatan tinggi.">
-
-Detail
-
-</a>
-<a href="#"
-
-class="detail-btn"
-
-data-title="Robot Transporter"
-
-data-image="assets/transporter.jpg"
-
-data-description="Robot transporter menggunakan ESP32, driver BTS7960 dan kontrol PS3.">
-
-Detail
-
-</a>
-<a href="#"
-
-class="detail-btn"
-
-data-title="Digital Clock"
-
-data-image="assets/digitalclock.jpg"
-
-data-description="Jam digital menggunakan IC CD4026 dan seven segment.">
-
-Detail
-
-</a>
-
-            </div>
-
-        </div>
-
-        <div class="project-card">
-
-            <img
-
-loading="lazy"
-
-src="assets/transporter.jpg">
-
-            <div class="project-content">
-
-                <h3>
-
-                    Robot Transporter
-
-                </h3>
-
-                <p>
-
-                    ESP32
-
-                    PS3 Controller
-
-                    BTS7960
-
-                </p>
-
-                <a href="#">
-
+                <h3>Robot Line Follower</h3>
+                <p>ESP32 | 16 Sensor | PID Control</p>
+                <a href="#" class="detail-btn" 
+                   data-title="Robot Line Follower" 
+                   data-image="assets/linefollower.svg" 
+                   data-description="Robot line follower menggunakan 16 sensor photodioda dan algoritma PID untuk kecepatan tinggi.">
                     Detail
-
                 </a>
-
             </div>
-
         </div>
 
-        <div class="project-card">
-
-            <img
-
-loading="lazy"
-
-src="assets/digitalclock.jpg">
-
+        <!-- Card 2: Robot Transporter -->
+        <div class="project-card robot">
+            <img loading="lazy" src="assets/transporter.svg" alt="Robot Transporter">
             <div class="project-content">
-
-                <h3>
-
-                    Digital Clock
-
-                </h3>
-
-                <p>
-
-                    CD4026
-
-                    Seven Segment
-
-                </p>
-
-                <a href="#">
-
+                <h3>Robot Transporter</h3>
+                <p>ESP32 | PS3 Controller | BTS7960</p>
+                <a href="#" class="detail-btn" 
+                   data-title="Robot Transporter" 
+                   data-image="assets/transporter.svg" 
+                   data-description="Robot transporter menggunakan ESP32, driver BTS7960 dan kontrol PS3.">
                     Detail
-
                 </a>
-
             </div>
-
         </div>
 
+        <!-- Card 3: Digital Clock -->
+        <div class="project-card embedded">
+            <img loading="lazy" src="assets/digitalclock.svg" alt="Digital Clock">
+            <div class="project-content">
+                <h3>Digital Clock</h3>
+                <p>CD4026 | Seven Segment</p>
+                <a href="#" class="detail-btn" 
+                   data-title="Digital Clock" 
+                   data-image="assets/digitalclock.svg" 
+                   data-description="Jam digital menggunakan IC CD4026 dan seven segment.">
+                    Detail
+                </a>
+            </div>
+        </div>
     </div>
 
 </section>
@@ -739,7 +620,7 @@ src="assets/digitalclock.jpg">
 
         <div class="certificate-card">
 
-            <img src="assets/certificate1.jpg" alt="Certificate">
+            <img src="assets/certificate1.svg" alt="Certificate">
 
             <h3>Embedded System</h3>
 
@@ -749,7 +630,7 @@ src="assets/digitalclock.jpg">
 
         <div class="certificate-card">
 
-            <img src="assets/certificate2.jpg" alt="Certificate">
+            <img src="assets/certificate2.svg" alt="Certificate">
 
             <h3>Internet of Things</h3>
 
@@ -759,7 +640,7 @@ src="assets/digitalclock.jpg">
 
         <div class="certificate-card">
 
-            <img src="assets/certificate3.jpg" alt="Certificate">
+            <img src="assets/certificate3.svg" alt="Certificate">
 
             <h3>Robot Programming</h3>
 
@@ -786,17 +667,17 @@ src="assets/digitalclock.jpg">
     </div>
 <div class="gallery-grid">
 
-    <img class="gallery-item" src="assets/gallery1.jpg">
+    <img class="gallery-item" src="assets/gallery1.svg">
 
-    <img class="gallery-item" src="assets/gallery2.jpg">
+    <img class="gallery-item" src="assets/gallery2.svg">
 
-    <img class="gallery-item" src="assets/gallery3.jpg">
+    <img class="gallery-item" src="assets/gallery3.svg">
 
-    <img class="gallery-item" src="assets/gallery4.jpg">
+    <img class="gallery-item" src="assets/gallery4.svg">
 
-    <img class="gallery-item" src="assets/gallery5.jpg">
+    <img class="gallery-item" src="assets/gallery5.svg">
 
-    <img class="gallery-item" src="assets/gallery6.jpg">
+    <img class="gallery-item" src="assets/gallery6.svg">
 
 </div>
 

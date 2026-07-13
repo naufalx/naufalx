@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <rect width="800" height="600" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="8"/>
+  <rect x="40" y="40" width="720" height="520" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="10,5"/>
+  <circle cx="400" cy="180" r="50" fill="#fbbf24"/>
+  <polygon points="400,140 415,170 445,175 423,197 428,227 400,212 372,227 377,197 355,175 385,170" fill="#ffffff"/>
+  <text x="50%" y="320" dominant-baseline="middle" text-anchor="middle" font-family="Poppins, sans-serif" font-size="36" fill="#ffffff" font-weight="bold">CERTIFICATE</text>
+  <text x="50%" y="380" dominant-baseline="middle" text-anchor="middle" font-family="Poppins, sans-serif" font-size="24" fill="#94a3b8">OF ACHIEVEMENT</text>
+  <text x="50%" y="450" dominant-baseline="middle" text-anchor="middle" font-family="Poppins, sans-serif" font-size="28" fill="#38bdf8" font-weight="bold">Robot Programming</text>
+  <text x="50%" y="500" dominant-baseline="middle" text-anchor="middle" font-family="Poppins, sans-serif" font-size="18" fill="#94a3b8">Granted to Naufal Fadhila Falih</text>
+</svg>

@@ -6,9 +6,15 @@ const assets=[
 
 "/index.html",
 
-"/css/style.css",
+"/style.css",
 
-"/js/script.js"
+"/script.js",
+
+"/navbar.js",
+
+"/project.js",
+
+"/typing.js"
 
 ];
 
